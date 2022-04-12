@@ -31,7 +31,7 @@ function recent_posts_function($atts)
         endwhile;
     endif;
     wp_reset_query();
-    return $return_string;
+    return $return_string; // [events quantity="2" status="free"]
 }
 
 add_shortcode('events', 'recent_posts_function');
