@@ -49,7 +49,7 @@ class Foo_Widget extends WP_Widget
         ];
         $events_query = new WP_Query($atts);
         foreach ($events_query as $pst) {
-            echo esc_html($pst->post_title) . '<br>' . esc_html($pst->post_date);
+            echo esc_html($pst->post_title) . ' ' . esc_html($pst->post_date);
         }
     }
 
