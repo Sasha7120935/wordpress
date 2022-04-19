@@ -1,0 +1,103 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2022-04-19 17:49+0300\n"
+"PO-Revision-Date: 2022-04-19 18:00+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Poedit-Basepath: .\n"
+
+# meta/form.php:32
+msgid "Date"
+msgstr "Дата"
+# meta/form.php:39
+# widget/web4pro-create-widget:73
+# web4pro-events:90
+# web4pro-events:100
+msgid "Status"
+msgstr "Статус"
+# meta/form.php:42
+# widget/web4pro-create-widget:79
+msgid "Free"
+msgstr "Бесплатно"
+# meta/form.php:43
+# widget/web4pro-create-widget:80
+msgid "By Invitation"
+msgstr "По Приглашению"
+# widget/web4pro-create-widget:90
+msgid "Quantity:"
+msgstr "Количество"
+# widget/web4pro-create-widget:78
+msgid "Select"
+msgstr "Выбрать"
+# web4pro-events:55
+msgid "Events"
+msgstr "События"
+# web4pro-events:56
+msgid "Events Item"
+msgstr "Элемент событий"
+# web4pro-events:57
+msgid "Add New"
+msgstr "Добавить новое"
+# web4pro-events:58
+msgid "Add New Events Item"
+msgstr "Добавить новый элемент событий"
+# web4pro-events:59
+msgid "Edit Events Item"
+msgstr "Редактировать элемент событий"
+# web4pro-events:60
+msgid "New Events Item"
+msgstr "Новый элемент событий"
+# web4pro-events:61
+msgid "View Events Item"
+msgstr "Просмотр элемента событий"
+# web4pro-events:62
+msgid "Search Events Items"
+msgstr "Поиск элементов событий"
+# web4pro-events:63
+msgid "Nothing found"
+msgstr "Ничего не найдено"
+# web4pro-events:64
+msgid "Nothing found in Trash"
+msgstr "Ничего не найдено в корзине"
+# web4pro-events:91
+msgid "Option"
+msgstr "Вариант"
+# web4pro-events:92
+msgid "Search Status"
+msgstr "Статус поиска"
+# web4pro-events:93
+msgid "All Status"
+msgstr "Все статусы"
+# web4pro-events:94
+msgid "Parent Option"
+msgstr "Родительский вариант"
+# web4pro-events:95
+msgid "Parent Option:"
+msgstr "Родительский вариант:"
+# web4pro-events:96
+msgid "Edit Option"
+msgstr "Редактировать вариант"
+# web4pro-events:97
+msgid "Update Option"
+msgstr "Вариант обновления"
+# web4pro-events:98
+msgid "Add New Option"
+msgstr "Добавить новую опцию"
+# web4pro-events:99
+msgid "New Option Name"
+msgstr "Имя нового параметра"
+# web4pro-events:100
+msgid "Add New Option"
+msgstr "Добавить новую опцию"
+# web4pro-events:101
+msgid "Add New Option"
+msgstr "Добавить новую опцию"
+
