@@ -7,7 +7,7 @@
  * Author: Automattic
  * Author URI: https://wordpress.com/
  * Text Domain:
- * Domain Path: /i18n/languages/
+ * Domain Path: /languages/
  * Requires at least: 5.7
  * Requires PHP: 7.0
  *
@@ -29,19 +29,19 @@ $event = esc_attr(get_post_meta(get_the_ID(), 'hcf_event', true));
         }
     </style>
     <p class="meta-options hcf_field">
-        <label for="hcf_published_date">Published Date</label>
+        <label for="hcf_published_date"><?php _e( 'Date', 'web4pro-events') ?></label>
         <input id="hcf_published_date"
                type="date"
                name="hcf_published_date"
-               value="<?php echo esc_attr(get_post_meta(get_the_ID(), 'hcf_published_date', true)); ?>">
+               value="<?php echo esc_attr(get_post_meta(get_the_ID(), 'hcf_published_date', true)); ?>" required>
     </p>
     <p class="meta-options hcf_field">
-        <label for="hcf_event">Status</label>
+        <label for="hcf_event"><?php _e( 'Status','web4pro-events'); ?></label>
         <select id="hcf_event"
                 name="hcf_event">
-            <option value="free" <?php echo ($event === 'free') ? ' selected' : ''; ?>>Free</option>
-            <option value="by_invitation" <?php echo ($event === 'by_invitation') ? ' selected' : ''; ?>>By Invitation
+            <option value="free" <?php echo ($event === 'free') ? ' selected' : ''; ?>><?php _e( 'Free', 'web4pro-events' ); ?></option>
+            <option value="by_invitation" <?php echo ($event === 'by_invitation') ? ' selected' : ''; ?>><?php _e( 'By Invitation', 'web4pro-events' ); ?>
             </option>
-        </select>
+        </select required>
     </p>
 </div>

@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Web4pro Ajax
+ * Plugin Name: Web4pro Ajax Search
  * Plugin URI: https://wordpress.com/
  * Description: An Web4pro toolkit that helps you sell anything. Beautifully.
  * Version: 6.3.1
@@ -19,7 +19,8 @@ include dirname(__FILE__) . '/widget/web4pro-ajax-widget.php';
  */
 function web4pro_filters()
 {
-    $title = array('title' => $_POST['title']);
+    $title = array(
+        'title' => $_POST['title']);
     $args = array(
         'orderby' => 'date',
         's' => $_POST['title'],
@@ -27,12 +28,15 @@ function web4pro_filters()
             'after' => $_POST['date'],
         ),
     );
-    $query = new WP_Query($args);
-    if ($query->have_posts()) :
-        while ($query->have_posts()): $query->the_post();
+    $query = new WP_Query( $args );
+    if ( $query->have_posts() ) :
+        while ( $query->have_posts() ): $query->the_post();
+            ob_start();
                 printf(' <a class="link-web4pro" style="text-decoration: none;" href="%s">%s</a>',
-                    get_permalink(), esc_html($query->post->post_title)) . '<br>';
-                die();
+                    get_permalink(), esc_html( $query->post->post_title ) ) . '<br>';
+            ob_end_clean();
+            printf(' <a class="link-web4pro" style="text-decoration: none;" href="%s">%s</a>',
+                get_permalink(), esc_html( $query->post->post_title) ) . '<br>';
         endwhile;
         wp_reset_postdata();
     else :
