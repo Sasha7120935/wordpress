@@ -83,7 +83,7 @@ class Web4pro_search extends WP_Widget
     }
 
     // Updating widget replacing old instances with new
-    function update($new_instance, $old_instance)
+    function update( $new_instance, $old_instance )
     {
         $instance = $old_instance;
         $instance['title'] = strip_tags($new_instance['title']);
