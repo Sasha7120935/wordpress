@@ -23,12 +23,11 @@ class Events_Widget extends WP_Widget
     {
         parent::__construct(
             'events_widget',
-            'Events',
-            array('description' => 'Shows the status of the post')
+            esc_html__('Events'),
+            array('description' => esc_html__('Shows the status of the post'), )
         );
 
         if ( is_active_widget(false, false, $this->id_base ) || is_customize_preview() ) {
-            add_action('wp_enqueue_scripts', array($this, 'add_widget_scripts'));
             add_action('wp_head', array($this, 'add_widget_style'));
         }
     }
@@ -116,23 +115,11 @@ class Events_Widget extends WP_Widget
     {
         $instance = array();
 
-        $instance['number'] = ( ! empty( $new_instance['number'] ) ) ? strip_tags( $new_instance['number'] ) : '';
-        $instance['select'] = isset( $new_instance['select'] ) ? wp_strip_all_tags( $new_instance['select'] ) : '';
+        $instance['number'] = ( ! empty( $new_instance['number'] ) ) ? sanitize_text_field( $new_instance['number'] ) : '';
+        $instance['select'] = isset( $new_instance['select'] ) ? sanitize_text_field( $new_instance['select'] ) : '';
 
         return $instance;
     }
-
-    function add_widget_scripts()
-    {
-        if ( !apply_filters( 'show_widget_script', true, $this->id_base ) ) {
-            return;
-        }
-
-        $theme_url = get_stylesheet_directory_uri();
-
-        wp_enqueue_script('widget_script', $theme_url . '/widget_script.js');
-    }
-
     function add_widget_style()
     {
         if ( !apply_filters( 'show_widget_style', true, $this->id_base ) ) {
