@@ -14,21 +14,21 @@ msgstr ""
 "X-Generator: Poedit 3.0.1\n"
 "X-Poedit-Basepath: .\n"
 
-# meta/form.php:32
+# web4pro-events/meta/form.php:32
 msgid "Date"
 msgstr "Дата"
-# meta/form.php:39
-# widget/web4pro-create-widget:73
-# web4pro-events:90
-# web4pro-events:100
+# web4pro-events/meta/form.php:39
+# web4pro-events/widget/web4pro-create-widget:73
+# web4pro-events/web4pro-events:90
+# web4pro-events/web4pro-events:100
 msgid "Status"
 msgstr "Статус"
-# meta/form.php:42
-# widget/web4pro-create-widget:79
+# web4pro-events/meta/form.php:42
+# web4pro-events/widget/web4pro-create-widget:79
 msgid "Free"
 msgstr "Бесплатно"
-# meta/form.php:43
-# widget/web4pro-create-widget:80
+# web4pro-events/meta/form.php:43
+# web4pro-events/widget/web4pro-create-widget:80
 msgid "By Invitation"
 msgstr "По Приглашению"
 # widget/web4pro-create-widget:90
@@ -37,67 +37,70 @@ msgstr "Количество"
 # widget/web4pro-create-widget:78
 msgid "Select"
 msgstr "Выбрать"
-# web4pro-events:55
+# web4pro-events/web4pro-events:55
 msgid "Events"
 msgstr "События"
-# web4pro-events:56
+# web4pro-events/web4pro-events:56
 msgid "Events Item"
 msgstr "Элемент событий"
-# web4pro-events:57
+# web4pro-events/web4pro-events:57
 msgid "Add New"
 msgstr "Добавить новое"
-# web4pro-events:58
+# web4pro-events/web4pro-events:58
 msgid "Add New Events Item"
 msgstr "Добавить новый элемент событий"
-# web4pro-events:59
+# web4pro-events/web4pro-events:59
 msgid "Edit Events Item"
 msgstr "Редактировать элемент событий"
-# web4pro-events:60
+# web4pro-events/web4pro-events:60
 msgid "New Events Item"
 msgstr "Новый элемент событий"
-# web4pro-events:61
+# web4pro-events/web4pro-events:61
 msgid "View Events Item"
 msgstr "Просмотр элемента событий"
-# web4pro-events:62
+# web4pro-events/web4pro-events:62
 msgid "Search Events Items"
 msgstr "Поиск элементов событий"
-# web4pro-events:63
+# web4pro-events/web4pro-events:63
 msgid "Nothing found"
 msgstr "Ничего не найдено"
-# web4pro-events:64
+# web4pro-events/web4pro-events:64
 msgid "Nothing found in Trash"
 msgstr "Ничего не найдено в корзине"
-# web4pro-events:91
+# web4pro-events/web4pro-events:91
 msgid "Option"
 msgstr "Вариант"
-# web4pro-events:92
+# web4pro-events/web4pro-events:92
 msgid "Search Status"
 msgstr "Статус поиска"
-# web4pro-events:93
+# web4pro-events/web4pro-events:93
 msgid "All Status"
 msgstr "Все статусы"
-# web4pro-events:94
+# web4pro-events/web4pro-events:94
 msgid "Parent Option"
 msgstr "Родительский вариант"
-# web4pro-events:95
+# web4pro-events/web4pro-events:95
 msgid "Parent Option:"
 msgstr "Родительский вариант:"
-# web4pro-events:96
+# web4pro-events/web4pro-events:96
 msgid "Edit Option"
 msgstr "Редактировать вариант"
-# web4pro-events:97
+# web4pro-events/web4pro-events:97
 msgid "Update Option"
 msgstr "Вариант обновления"
-# web4pro-events:98
+# web4pro-events/web4pro-events:98
 msgid "Add New Option"
 msgstr "Добавить новую опцию"
-# web4pro-events:99
+# web4pro-events/web4pro-events:99
 msgid "New Option Name"
 msgstr "Имя нового параметра"
-# web4pro-events:100
+# web4pro-events/web4pro-events:100
 msgid "Add New Option"
 msgstr "Добавить новую опцию"
-# web4pro-events:101
+# web4pro-events/web4pro-events:101
 msgid "Add New Option"
 msgstr "Добавить новую опцию"
+# web4pro-events/web4pro-events:138
+msgid "not found"
+msgstr "не найден"
 

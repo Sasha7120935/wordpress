@@ -24,12 +24,9 @@ class Events_Widget extends WP_Widget
         parent::__construct(
             'events_widget',
             esc_html__('Events'),
-            array('description' => esc_html__('Shows the status of the post'), )
+            array('description' => esc_html__('Shows the status of the post'))
         );
 
-        if ( is_active_widget(false, false, $this->id_base ) || is_customize_preview() ) {
-            add_action('wp_head', array($this, 'add_widget_style'));
-        }
     }
 
     /**
@@ -40,21 +37,10 @@ class Events_Widget extends WP_Widget
      */
     function widget( $args, $instance )
     {
-        $select = isset( $instance['select'] ) ? : '';
-        $number = isset( $instance['number'] ) ? : '';
-        $args = [
-            'post_type' => 'events',
-            'meta_query' => [['key' => 'hcf_event', 'value' => $instance['select']]],
-            'posts_per_page' => $instance['number']
-        ];
-        $events_query = new WP_Query( $args );
-        foreach ( $events_query as $value ) {
-            echo esc_html($value->post_title) . ' ' . esc_html($value->post_date);
-        }
-    }
+        $status = isset( $instance['status'] ) ?: '';
+        $quantity = isset( $instance['quantity'] ) ?: '';
 
-    function events_search()
-    {
+        echo recent_posts_function($instance);
 
     }
 
@@ -65,13 +51,13 @@ class Events_Widget extends WP_Widget
      */
     function form( $instance )
     {
-        $number = @ $instance['number'] ?: '';
-        $select = @ $instance['select'] ?: '';
+        $quantity = @ $instance['quantity'] ?: '';
+        $status = @ $instance['status'] ?: '';
         ?>
         <p>
-            <label for="<?php echo $this->get_field_id('select') ?>"><?php _e( 'Status', 'web4pro-events' ); ?></label>
-            <select name="<?php echo $this->get_field_name('select'); ?>"
-                    id="<?php echo $this->get_field_id('select'); ?>" class="widefat">
+            <label for="<?php echo $this->get_field_id('status') ?>"><?php _e('Status', 'web4pro-events'); ?></label>
+            <select name="<?php echo $this->get_field_name('status'); ?>"
+                    id="<?php echo $this->get_field_id('status'); ?>" class="widefat">
                 <?php
                 $options = array(
                     '' => __('Select', 'web4pro-events'),
@@ -79,22 +65,22 @@ class Events_Widget extends WP_Widget
                     'by_invitation' => __('By Invitation', 'web4pro-events')
                 );
                 foreach ( $options as $key => $name ) {
-                    echo '<option value="' . esc_attr($key) . '" id="' . esc_attr($key) . '" ' . selected($select, $key, false) . '>' . $name . '</option>';
+                    echo '<option value="' . esc_attr($key) . '" id="' . esc_attr($key) . '" ' . selected($status, $key, false) . '>' . $name . '</option>';
                 }
                 ?>
             </select>
         </p>
         <p>
-            <label for="<?php echo $this->get_field_id('number') ?>">
-                <?php _e( 'Quantity:', 'web4pro-events' ); ?>
+            <label for="<?php echo $this->get_field_id('quantity') ?>">
+                <?php _e('Quantity:', 'web4pro-events'); ?>
             </label>
             <input class="tiny-text"
-                   id="<?php echo $this->get_field_id('number') ?>"
-                   name="<?php echo $this->get_field_name('number') ?>"
+                   id="<?php echo $this->get_field_id('quantity') ?>"
+                   name="<?php echo $this->get_field_name('quantity') ?>"
                    type="number"
                    step="1"
                    min="1"
-                   value="<?php echo absint($number) ?>"
+                   value="<?php echo absint($quantity) ?>"
                    size="3"
             />
         </p>
@@ -114,24 +100,9 @@ class Events_Widget extends WP_Widget
     function update( $new_instance, $old_instance )
     {
         $instance = array();
-
-        $instance['number'] = ( ! empty( $new_instance['number'] ) ) ? sanitize_text_field( $new_instance['number'] ) : '';
-        $instance['select'] = isset( $new_instance['select'] ) ? sanitize_text_field( $new_instance['select'] ) : '';
-
+        $instance['quantity'] = (!empty($new_instance['quantity'])) ? sanitize_text_field($new_instance['quantity']) : '';
+        $instance['status'] = isset($new_instance['status']) ? sanitize_text_field($new_instance['status']) : '';
         return $instance;
-    }
-    function add_widget_style()
-    {
-        if ( !apply_filters( 'show_widget_style', true, $this->id_base ) ) {
-            return;
-        }
-        ?>
-        <style type="text/css">
-            .my_widget a {
-                display: inline;
-            }
-        </style>
-        <?php
     }
 
 }

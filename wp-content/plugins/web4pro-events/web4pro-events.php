@@ -134,6 +134,8 @@ function recent_posts_function( $atts )
         while ( $events_query->have_posts() ) : $events_query->the_post();
             $return_string .= '<li>' . get_the_title() . ' ' . get_the_date() . '</li>';
         endwhile;
+        else:
+        return '<p><strong>' . _e('not found','web4pro-events') . '</strong></p>';
     endif;
     wp_reset_query();
     return $return_string;

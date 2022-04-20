@@ -1,0 +1,21 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: web4pro-field-checkout\n"
+"POT-Creation-Date: 2022-04-20 15:23+0300\n"
+"PO-Revision-Date: 2022-04-20 15:25+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-KeywordsList: __;_e\n"
+# web4pro-field-checkout/web4pro-field-checkout.php:26
+# web4pro-field-checkout/web4pro-field-checkout.php:49
+# web4pro-field-checkout/web4pro-field-checkout.php:59
+msgid "Additional Information"
+msgstr "Дополнительная информация"

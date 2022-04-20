@@ -7,7 +7,7 @@
  * Author: Automattic
  * Author URI: https://wordpress.com/
  * Text Domain:
- * Domain Path: /i18n/languages/
+ * Domain Path: /languages/
  * Requires at least: 5.7
  * Requires PHP: 7.4
  *
@@ -34,7 +34,7 @@ add_action('woocommerce_checkout_update_order_meta', 'additional_information_sav
 
 function additional_information_save_new_checkout_field( $order_id )
 {
-    if ( $_POST['additional_information'] ) {
+    if ( isset($_POST['additional_information'] ) ) {
         update_post_meta( $order_id, 'additional_information', esc_attr( $_POST['additional_information'] ) );
     }
 }
@@ -46,7 +46,7 @@ function additional_information_show_new_checkout_field_order( $order )
     $order_id = $order->get_id();
     $info = get_post_meta($order_id, 'additional_information', true);
     if ( $info ) {
-        echo '<p><strong>' . __('Additional Information') . ':</strong>' . $info . '</p>';
+        echo '<p><strong>' . _e('Additional Information','web4pro-field-checkout') . '</strong>' . $info . '</p>';
     }
 }
 
@@ -56,6 +56,12 @@ function additional_information_show_new_checkout_field_emails( $order, $sent_to
 {
     $info = get_post_meta($order->get_id(), 'additional_information', true);
     if ( $info ) {
-        echo '<p><strong>' . __('Additional Information') . ':</strong>' . $info . '</p>';
+        echo '<p><strong>' . _e('Additional Information','web4pro-field-checkout') . '</strong>' . $info . '</p>';
     }
 }
+function add_languages_web4pro()
+{
+    load_plugin_textdomain('web4pro-field-checkout', false, basename(dirname(__FILE__)) . '/languages/');
+}
+
+add_action('init', 'add_languages_web4pro');
