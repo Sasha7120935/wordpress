@@ -19,12 +19,15 @@ class Web4pro_search extends WP_Widget
     {
         parent::__construct(
             'true_top_widget',
-            'Web4pro Search',
-            array('description' => 'Search posts')
+            esc_html__('Web4pro Search'),
+            array('description' => esc_html__('Search posts'))
         );
     }
 
-    // Creating widget front-end
+    /**
+     * @param array $args
+     * @param array $instance
+     */
     public function widget( $args, $instance )
     {
         $title = apply_filters('widget_title', $instance['title']);
@@ -34,33 +37,36 @@ class Web4pro_search extends WP_Widget
         ?>
         <form action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="POST" id="filter">
             <label>
-                <input class="web4pro-date" id="<?php echo $this->get_field_id('date'); ?>"
+                <input class="web4pro-date" id="date-web4pro"
                        type="date" value="<?php echo get_search_query(); ?>" name="date" required/>
             </label>
             <label>
-                <input type="search" class="web4pro-search" id="<?php echo $this->get_field_id('title'); ?>"
+                <input type="search" class="web4pro-search" id="title-web4pro"
                        placeholder="<?php esc_attr_e('Search...', 'Theme_domain'); ?>"
                        value="<?php echo get_search_query(); ?>" name="title" required/>
             </label>
-            <input type="hidden" name="action" value="post">
+            <input type="hidden" name="action" value="web4pro_filters">
         </form>
         <div id="response"></div>
         <?php
         echo $args['after_widget'];
     }
 
-    // Widget Backend
+    /**
+     * @param array $instance
+     * @return string|void
+     */
     function form( $instance )
     {
         $defaults = array(
-            'title' => 'Post Search',
+            'title' => __('Post Search', 'web4pro-ajax-search'),
         );
         $number = @ $instance['number'] ?: '';
         $instance = wp_parse_args((array)$instance, $defaults);
         // Widget admin form
         ?>
         <p>
-            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'web4pro-events'); ?></label>
+            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:','web4pro-ajax-search'); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>"
                    name="<?php echo $this->get_field_name('title'); ?>" type="text"
                    value="<?php echo $instance['title']; ?>"/>
@@ -82,7 +88,11 @@ class Web4pro_search extends WP_Widget
         <?php
     }
 
-    // Updating widget replacing old instances with new
+    /**
+     * @param array $new_instance
+     * @param array $old_instance
+     * @return array
+     */
     function update( $new_instance, $old_instance )
     {
         $instance = $old_instance;
