@@ -30,23 +30,22 @@ class Web4pro_search extends WP_Widget
      */
     public function widget( $args, $instance )
     {
+        $quantity = isset( $instance['number'] ) ?: '';
         $title = apply_filters('widget_title', $instance['title']);
         echo $args['before_widget'];
         if ( ! empty( $title ) )
             echo $args['before_title'] . $title . $args['after_title'];
         ?>
-        <form action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="POST" id="filter">
             <label>
                 <input class="web4pro-date" id="date-web4pro"
-                       type="date" value="<?php echo get_search_query(); ?>" name="date" required/>
+                       type="date"  name="date" required/>
             </label>
             <label>
-                <input type="search" class="web4pro-search" id="title-web4pro"
-                       placeholder="<?php esc_attr_e('Search...', 'Theme_domain'); ?>"
-                       value="<?php echo get_search_query(); ?>" name="title" required/>
+                <input type="text" class="web4pro-search" id="title-web4pro"
+                       placeholder="<?php esc_attr_e('Search...', 'web4pro-ajax-search'); ?>"
+                        name="title" onkeyup="get_ajax_search()" required/>
             </label>
-            <input type="hidden" name="action" value="web4pro_filters">
-        </form>
+            <input type="hidden" id="web4pro_filters" value="<?php echo $quantity ?>">
         <div id="response"></div>
         <?php
         echo $args['after_widget'];
@@ -63,7 +62,6 @@ class Web4pro_search extends WP_Widget
         );
         $number = @ $instance['number'] ?: '';
         $instance = wp_parse_args((array)$instance, $defaults);
-        // Widget admin form
         ?>
         <p>
             <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:','web4pro-ajax-search'); ?></label>
@@ -73,7 +71,7 @@ class Web4pro_search extends WP_Widget
         </p>
         <p>
             <label for="<?php echo $this->get_field_id('number') ?>">
-                <?php _e( 'Quantity:', 'web4pro-events' ); ?>
+                <?php _e( 'Quantity:', 'web4pro-ajax-search' ); ?>
             </label>
             <input class="ats-text"
                    id="<?php echo $this->get_field_id('number') ?>"
@@ -107,4 +105,4 @@ function register_web4pro_search()
     register_widget('Web4pro_search');
 }
 
-add_action('widgets_init', 'register_web4pro_search');
+add_action( 'widgets_init', 'register_web4pro_search' );

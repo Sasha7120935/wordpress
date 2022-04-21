@@ -23,3 +23,13 @@ msgstr "Заголовок:"
 # we4pro-ajax-search/web4pro-ajax-widget.php:62
 msgid  "Post Search"
 msgstr "Записи поиск"
+# we4pro-ajax-search/web4pro-ajax-widget.php:76
+msgid  "Quantity:"
+msgstr "Количество:"
+# we4pro-ajax-search/web4pro-ajax-widget.php:44
+msgid  "Search..."
+msgstr "Количество:"
+# we4pro-ajax-search/web4pro-ajax-search.php:27
+msgid  "Fill in all the fields"
+msgstr "Заполните все поля"
+
