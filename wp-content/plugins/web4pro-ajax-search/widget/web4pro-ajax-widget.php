@@ -106,3 +106,25 @@ function register_web4pro_search()
 }
 
 add_action( 'widgets_init', 'register_web4pro_search' );
+?>
+<style>
+    .widget .search-form {
+        position: relative;
+    }
+
+    /*.widget .web4pro-date {*/
+    /*    width: 23%;*/
+    /*    border: 2px solid #9d9d9d;*/
+    /*    padding: 12px 15px;*/
+    /*    padding-right: 15px;*/
+    /*    font-size: 14px;*/
+    /*}*/
+    /*.widget .web4pro-search {*/
+    /*    width: 41%;*/
+    /*    border: 1px solid #9d9d9d;*/
+    /*    padding: 10px 15px;*/
+    /*    padding-right: 20px;*/
+    /*    font-size: 21px;*/
+    /*    font-family: revert;*/
+    /*}*/
+</style>
